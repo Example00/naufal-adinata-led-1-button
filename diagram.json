@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -157.2, "left": 71, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -157.2,
+      "left": 119,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -157.2,
+      "left": 167,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -62.4,
+      "left": 66.65,
+      "rotate": 90,
+      "attrs": { "value": "470" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -62.4,
+      "left": 114.65,
+      "rotate": 90,
+      "attrs": { "value": "470" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -62.4,
+      "left": 162.65,
+      "rotate": 90,
+      "attrs": { "value": "470" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -80.2,
+      "left": 316.8,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 13.55,
+      "left": 403.2,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "uno:13", "green", [ "h28.8", "v37.2" ] ],
+    [ "led2:A", "r2:1", "green", [ "v0" ] ],
+    [ "r2:2", "uno:12", "green", [ "h0" ] ],
+    [ "led3:A", "r3:1", "green", [ "v0" ] ],
+    [ "uno:11", "r3:2", "green", [ "v-28.8", "h48.6" ] ],
+    [ "led1:C", "uno:GND.1", "green", [ "v105.6", "h29.2" ] ],
+    [ "led2:C", "uno:GND.1", "green", [ "v0", "h-18.8" ] ],
+    [ "led3:C", "uno:GND.1", "green", [ "v0", "h-9.2", "v115.2", "h-57.6" ] ],
+    [ "uno:7", "btn1:1.l", "green", [ "v-19.2", "h70.8", "v-57.6" ] ],
+    [ "uno:5V", "btn1:2.l", "red", [ "v28.7", "h147.8" ] ],
+    [ "btn1:2.r", "r4:1", "green", [ "h0" ] ],
+    [ "uno:GND.2", "r4:2", "black", [ "v19.1", "h272.7" ] ]
+  ],
+  "dependencies": {}
+}
